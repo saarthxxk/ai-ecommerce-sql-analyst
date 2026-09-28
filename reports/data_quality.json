@@ -1,0 +1,176 @@
+{
+  "tables": {
+    "users": {
+      "row_count": 10000,
+      "column_count": 6,
+      "columns": [
+        "user_id",
+        "name",
+        "email",
+        "gender",
+        "city",
+        "signup_date"
+      ],
+      "missing_values": {
+        "user_id": 0,
+        "name": 0,
+        "email": 0,
+        "gender": 0,
+        "city": 0,
+        "signup_date": 0
+      },
+      "duplicate_rows": 0,
+      "primary_key": "user_id",
+      "primary_key_unique_count": 10000,
+      "primary_key_duplicates": 0,
+      "numeric_stats": {},
+      "categorical_top_values": {}
+    },
+    "products": {
+      "row_count": 2000,
+      "column_count": 6,
+      "columns": [
+        "product_id",
+        "product_name",
+        "category",
+        "brand",
+        "price",
+        "rating"
+      ],
+      "missing_values": {
+        "product_id": 0,
+        "product_name": 0,
+        "category": 0,
+        "brand": 0,
+        "price": 0,
+        "rating": 0
+      },
+      "duplicate_rows": 0,
+      "primary_key": "product_id",
+      "primary_key_unique_count": 2000,
+      "primary_key_duplicates": 0,
+      "numeric_stats": {},
+      "categorical_top_values": {}
+    },
+    "orders": {
+      "row_count": 20000,
+      "column_count": 5,
+      "columns": [
+        "order_id",
+        "user_id",
+        "order_date",
+        "order_status",
+        "total_amount"
+      ],
+      "missing_values": {
+        "order_id": 0,
+        "user_id": 0,
+        "order_date": 0,
+        "order_status": 0,
+        "total_amount": 0
+      },
+      "duplicate_rows": 0,
+      "primary_key": "order_id",
+      "primary_key_unique_count": 20000,
+      "primary_key_duplicates": 0,
+      "numeric_stats": {},
+      "categorical_top_values": {}
+    },
+    "order_items": {
+      "row_count": 43525,
+      "column_count": 7,
+      "columns": [
+        "order_item_id",
+        "order_id",
+        "product_id",
+        "user_id",
+        "quantity",
+        "item_price",
+        "item_total"
+      ],
+      "missing_values": {
+        "order_item_id": 0,
+        "order_id": 0,
+        "product_id": 0,
+        "user_id": 0,
+        "quantity": 0,
+        "item_price": 0,
+        "item_total": 0
+      },
+      "duplicate_rows": 0,
+      "primary_key": "order_item_id",
+      "primary_key_unique_count": 43525,
+      "primary_key_duplicates": 0,
+      "numeric_stats": {},
+      "categorical_top_values": {}
+    },
+    "reviews": {
+      "row_count": 15000,
+      "column_count": 7,
+      "columns": [
+        "review_id",
+        "order_id",
+        "product_id",
+        "user_id",
+        "rating",
+        "review_text",
+        "review_date"
+      ],
+      "missing_values": {
+        "review_id": 0,
+        "order_id": 0,
+        "product_id": 0,
+        "user_id": 0,
+        "rating": 0,
+        "review_text": 0,
+        "review_date": 0
+      },
+      "duplicate_rows": 0,
+      "primary_key": "review_id",
+      "primary_key_unique_count": 15000,
+      "primary_key_duplicates": 0,
+      "numeric_stats": {},
+      "categorical_top_values": {}
+    },
+    "events": {
+      "row_count": 80000,
+      "column_count": 5,
+      "columns": [
+        "event_id",
+        "user_id",
+        "product_id",
+        "event_type",
+        "event_timestamp"
+      ],
+      "missing_values": {
+        "event_id": 0,
+        "user_id": 0,
+        "product_id": 0,
+        "event_type": 0,
+        "event_timestamp": 0
+      },
+      "duplicate_rows": 0,
+      "primary_key": "event_id",
+      "primary_key_unique_count": 80000,
+      "primary_key_duplicates": 0,
+      "numeric_stats": {},
+      "categorical_top_values": {}
+    }
+  },
+  "referential_integrity": {
+    "orders.user_id -> users.user_id": 0,
+    "order_items.order_id -> orders.order_id": 0,
+    "order_items.product_id -> products.product_id": 0,
+    "order_items.user_id -> users.user_id": 0,
+    "reviews.order_id -> orders.order_id": 0,
+    "reviews.product_id -> products.product_id": 0,
+    "reviews.user_id -> users.user_id": 0,
+    "events.user_id -> users.user_id": 0,
+    "events.product_id -> products.product_id": 0
+  },
+  "revenue_reconciliation": {
+    "orders_checked": 20000,
+    "orders_matching_sum_of_items": 20000,
+    "max_discrepancy": 0.0
+  }
+}

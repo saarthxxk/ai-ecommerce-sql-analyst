@@ -1,0 +1,26 @@
+# Web API
+fastapi>=0.141.0
+uvicorn[standard]>=0.54.0
+pydantic>=2.13.0
+pydantic-settings>=2.15.0
+python-dotenv>=1.2.0
+
+# Database
+sqlalchemy>=2.1.0
+psycopg[binary]>=3.3.0
+
+# Data processing
+pandas>=3.0.0
+
+# SQL parsing / validation
+sqlglot>=30.20.0
+
+# LLM / agent
+langchain>=1.4.0
+langchain-core>=1.6.0
+langgraph>=1.2.0
+langchain-google-genai>=4.4.0
+
+# Testing
+pytest>=9.1.0
+httpx>=0.28.0
